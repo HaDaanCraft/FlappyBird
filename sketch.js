@@ -13,6 +13,5 @@ function draw() {
 function keyPressed() {
 	if (key == ' ') {
 		bird.up();
-		console.log("Omhoog");
 	}
 }
