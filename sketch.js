@@ -15,6 +15,7 @@ function draw() {
 
     if (pipes[i].hits(bird)) {
       console.log("HIT");
+      window.alert("Je bent dood!!!");
     }
 
 
