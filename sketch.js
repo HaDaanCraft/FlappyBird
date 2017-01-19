@@ -19,6 +19,10 @@ function draw() {
       window.location.reload(false);
     }
 
+    if (pipes[i].score(bird)) {
+      console.log("1");
+    }
+
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
