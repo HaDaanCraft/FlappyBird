@@ -1,9 +1,12 @@
 var bird;
 var pipes = [];
+var scorepoints = [];
+var score = 0;
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
   pipes.push(new Pipe());
+  scorepoints.push(new scorepoint());
 }
 
 function draw() {
@@ -14,15 +17,9 @@ function draw() {
     pipes[i].update();
 
     if (pipes[i].hits(bird)) {
-      console.log("HIT");
-      window.alert("Je bent dood!!!");
-      window.location.reload(false);
-    }
+      //console.log("HIT");
 
-    if (pipes[i].score(bird)) {
-      console.log("1");
     }
-
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
@@ -31,10 +28,24 @@ function draw() {
 
   }
 
+for (var o = scorepoints.length-1; o >= 0; o--) {
+  scorepoints[o].show();
+  scorepoints[o].update();
+
+  if (scorepoints[o].offscreen()){
+    scorepoints.splice(o, 1);
+  }
+
+  if (scorepoints[o].hits(bird)) {
+    console.log("score");
+  }
+}
+
   bird.update();
   bird.show();
 
   if (frameCount % 100 == 0) {
+    scorepoints.push(new scorepoint());
     pipes.push(new Pipe());
   }
 

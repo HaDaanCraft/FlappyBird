@@ -18,17 +18,6 @@ function Pipe() {
     return false;
   }
 
-this.score = function(bird){
-  if (bird.y > this.top && bird.y < height - this.bottom){
-      return true;
-    }
-
-
-  }
-
-}
-
-
   this.show = function() {
     fill(255);
     if (this.highlight) {
@@ -49,6 +38,4 @@ this.score = function(bird){
       return false;
     }
   }
-
-
 }
