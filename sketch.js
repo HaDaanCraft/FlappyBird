@@ -37,7 +37,7 @@ for (var o = scorepoints.length-1; o >= 0; o--) {
   }
 
   if (scorepoints[o].hits(bird)) {
-    console.log("score");
+    score +=1;
   }
 }
 

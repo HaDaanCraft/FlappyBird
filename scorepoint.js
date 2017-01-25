@@ -16,8 +16,10 @@ function scorepoint() {
   }
 
   this.hits = function(bird) {
-    if (bird.y == this.yscore) {
-      return true;
+    if (bird.y < 350 && bird.y > 250) {
+      if (this.x == 64) {
+        return true;
+      }
     }
   }
 
