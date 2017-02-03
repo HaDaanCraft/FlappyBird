@@ -7,6 +7,7 @@ function setup() {
   bird = new Bird();
   pipes.push(new Pipe());
   scorepoints.push(new scorepoint());
+  document.getElementById("scorehtml").innerHTML="Score: " + score;
 }
 
 function draw() {
@@ -18,7 +19,8 @@ function draw() {
 
     if (pipes[i].hits(bird)) {
       //console.log("HIT");
-
+      score = 0;
+      document.getElementById("scorehtml").innerHTML="Score: " + score;
     }
 
     if (pipes[i].offscreen()) {
@@ -38,6 +40,7 @@ for (var o = scorepoints.length-1; o >= 0; o--) {
 
   if (scorepoints[o].hits(bird)) {
     score +=1;
+    document.getElementById("scorehtml").innerHTML="Score: " + score;
   }
 }
 
