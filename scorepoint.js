@@ -2,7 +2,7 @@ function scorepoint() {
 
   this.yscore = height/2;
   this.x = width;
-  this.speed = 2;
+  this.speed = 7;
 
   this.hits = function(bird) {
     if (this.yscore == bird.y) {
